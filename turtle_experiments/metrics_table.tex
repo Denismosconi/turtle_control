@@ -1,0 +1,75 @@
+======================================================================
+TURTLESIM EXPERIMENT PLOTTER (publication sizing)
+======================================================================
+  ✓ Loaded kp1_210: Kp=(1,1), 20.52s, N=1265
+  ✓ Loaded kp2_210: Kp=(2,2), 12.66s, N=773
+  ✓ Loaded kp4_210: Kp=(4,4), 11.17s, N=681
+  ✓ Loaded kp10_210: Kp=(10,10), 12.60s, N=770
+
+Aligning data:
+  kp1_210: 20.52s -> 15.00s (TRUNCATED), 1265 -> 1500 samples
+  kp2_210: 12.66s -> 15.00s (EXTRAPOLATED), 773 -> 1500 samples
+  kp4_210: 11.17s -> 15.00s (EXTRAPOLATED), 681 -> 1500 samples
+  kp10_210: 12.60s -> 15.00s (EXTRAPOLATED), 770 -> 1500 samples
+
+==============================================================================
+PERFORMANCE SUMMARY (aligned)
+==============================================================================
+Experiment    Kp_lin  Kp_ang   Orig(s)       N  Final err
+------------------------------------------------------------------------------
+kp1_210            1       1     20.52    1265     0.0025
+kp2_210            2       2     12.66     773     0.0010
+kp4_210            4       4     11.17     681     0.0085
+kp10_210          10      10     12.60     770     0.1067
+==============================================================================
+
+Saved figures:
+  - figures_out/xy_trajectories.pdf
+  - figures_out/error_convergence.pdf
+  - figures_out/x_position.pdf
+  - figures_out/y_position.pdf
+  - figures_out/linear_velocity.pdf
+  - figures_out/angular_velocity.pdf
+  - figures_out/orientation.pdf
+  - figures_out/x_error.pdf
+  - figures_out/y_error.pdf
+  - figures_out/vel_x_global.pdf
+  - figures_out/vel_y_global.pdf
+  - figures_out/global_velocity_magnitude.pdf
+  - figures_out/comparison_panel_compact.pdf
+
+Notes:
+  • Layout: two-column, assumed textwidth: 160.0 mm (6.30 in), figure width: 3.02 in.
+  • For LaTeX, prefer vector PDF: \includegraphics[width=\linewidth]{...}.
+  • If your template text block is wider/narrower, pass --textwidth-mm accordingly.
+
+LaTeX table (copy/paste):
+
+\begin{table}[!t]
+\centering
+\caption{Settling time ($t_s=4\tau$ for 2\%), steady-state absolute error, and overshoot for angular and linear motions (aligned window).}
+\label{tab:metrics_motion}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{6}{c}{\textbf{Angular motion}}\\
+\midrule
+Experiment & $K_p$ & $\tau$ (s) & $t_s$ (s) & $|e_\theta(\infty)|$ (deg) & OS (\%)\\
+\midrule
+kp1_210 & 1.00 & 1.0000 & 4.0000 & 0.0253 & 0.00\\
+kp2_210 & 2.00 & 0.5000 & 2.0000 & 0.0076 & 0.00\\
+kp4_210 & 4.00 & 0.2500 & 1.0000 & 0.0857 & 0.00\\
+kp10_210 & 10.00 & 0.1000 & 0.4000 & 1.0739 & 0.00\\
+\midrule
+\multicolumn{6}{c}{\textbf{Linear motion}}\\
+\midrule
+Experiment & $K_p$ & $\tau$ (s) & $t_s$ (s) & $\|\mathbf{e}(\infty)\|$ (m) & OS (\%)\\
+\midrule
+kp1_210 & 1.00 & 1.0000 & 4.0000 & 0.081545 & 0.00\\
+kp2_210 & 2.00 & 0.5000 & 2.0000 & 0.001011 & 0.00\\
+kp4_210 & 4.00 & 0.2500 & 1.0000 & 0.008520 & 0.00\\
+kp10_210 & 10.00 & 0.1000 & 0.4000 & 0.106728 & 0.00\\
+\bottomrule
+\end{tabular}
+\end{table}
